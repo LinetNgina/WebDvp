@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>24-hr Clock System with Alarm</title>
+ <style>
+   body{
+   display:block;
+   margin:8px;
+}
+   #clock{
+  background-color:blue;
+  margin:50px 50px;
+  border-radius:80px;
+  padding:20px 20px 20px 20px;
+  font-size: 100px;
+  font-family: Arial;
+  text-align: center;
+  font-weight :bold;
+ 
+} 
+
+ </style>
+</head>
+ <body>
+   <img src=https:"https://pin.it/6fVpXK4" alt="Clock Image" >
+  <div id="clock">00:00:00</div>
+ 
+   
+ <script>
+   function updateClock() {
+     const now= new Date();
+     const hours= now.getHours().toString().padStart(2, '0');
+     const minutes= now.getMinutes().toString().padStart(2, '0');
+     const seconds= now.getSeconds().toString().padStart(2, '0');
+  const timeString= `${hours}:${minutes}:${seconds}`;
+   document.getElementById('clock').innerText = timeString;
+     }
+    setInterval(updateClock, 1000);
+  
+    updateClock();
+</script>
+</body>
+</html>
